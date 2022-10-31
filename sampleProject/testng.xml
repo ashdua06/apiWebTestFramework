@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Sample_US">
+    <parameter name="Brand" value="Sample" />
+    <parameter name="Domain" value="US"></parameter>
+    <parameter name="Environment" value="qa" />
+    <parameter name="Language" value="EN" />
+    <parameter name="Browser" value="chrome" />
+    <parameter name="Viewport" value="Dotcom" />
+    <parameter name="Incognito" value="false" />
+    <test name="General" parallel="methods" thread-count="1">
+        <packages>
+            <package name="systemTesting.buyItem.*" />
+        </packages>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
