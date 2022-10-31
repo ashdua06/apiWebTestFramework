@@ -20,7 +20,7 @@ public class PurchaseItemTest extends TestBase {
         RandomUserGeneratorValidator.getInstance().validateRandomUserGenerator(randomUserGenerator);
     }
 
-    @Test( priority = 1)
+    @Test( priority = 1,dependsOnMethods = "createRandomUserTest")
     public void registerUserTest() {
         launchUrl(QA_URL);
         new Homepage(getDriver()).clickCreateAccount();
@@ -31,7 +31,7 @@ public class PurchaseItemTest extends TestBase {
         createAccountPage.retryAccountCreationIfFailed(randomUserGenerator,accountCreationFlag);
     }
 
-    @Test( priority = 2)
+    @Test( priority = 2,dependsOnMethods = "registerUserTest")
     public void purchaseItemTest() {
         new MyAccountPage(getDriver()).clickSale();
         new SalePage(getDriver()).clickMensJacket().selectJacket().addToCart();
